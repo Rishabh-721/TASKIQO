@@ -1,0 +1,22 @@
+{
+  "name": "TASKIQO",
+  "version": "1.0.0",
+  "description": "A MERN stack role-based task management system featuring JWT authentication, RBAC, user management, task assignment, and workflow tracking for Super Admins, Admins, and Employees.",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server.js",
+    "dev": "nodemon Server.js"
+  },
+  "keywords": [],
+  "author": "Rishabh-721",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4"
+  }
+}
