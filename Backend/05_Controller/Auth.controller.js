@@ -1,5 +1,4 @@
 import User from "../02_Model/User.model.js";
-import auth from "../03_Middleware/Auth.Middleware.js";
 import {hashingPwd, matchingPwd} from "../04_Utils/PwdChange.utils.js"
 import generateToken from "../04_Utils/CreatingToken.utils.js";
 
@@ -107,11 +106,11 @@ const login = async(req, res) => {
 }
 
 
-const getMe = async(req, res) => {
+const profile = async(req, res) => {
     res.status(200).json({
         message: "User Found Successfully",
         data: req.user
     })
 }
 
-export {signUp, login, getMe};
+export {signUp, login, profile};

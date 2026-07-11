@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node Server.js",
-    "dev": "nodemon Server.js"
+    "dev": "nodemon Server.js",
+    "seed": "node 07_Seed/Seed.Super_Admin.js"
   },
   "keywords": [],
   "author": "Rishabh-721",

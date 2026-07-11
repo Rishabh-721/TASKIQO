@@ -12,10 +12,14 @@ Taskiqo is a MERN stack role-based task management system designed to help organ
 - Protected Routes
 
 ### User Management
-- Super Admin
-- Admin
-- Employee
-- User Approval System
+- Role-Based Access Control (RBAC)
+- Super Admin Seed
+- Profile API
+- Activate / Deactivate Users
+- Promote / Demote Users
+- Soft Delete & Restore Users
+- User List API
+- User Filtering (Role, Active, Deleted)
 - Session Version Management
 
 ## 🛠️ Tech Stack
@@ -35,7 +39,7 @@ Taskiqo is a MERN stack role-based task management system designed to help organ
 
 ## 📂 Project Structure
 
-```
+```text
 Backend/
 ├── 01_Database
 ├── 02_Model
@@ -43,13 +47,14 @@ Backend/
 ├── 04_Utils
 ├── 05_Controller
 ├── 06_Routes
+├── 07_Seed
 └── Server.js
-```
 
 ## 📌 Current Status
 
-- ✅ Day 1 Completed
-- 🔄 User Management (In Progress)
+- ✅ Day 1 – Authentication Module Completed
+- ✅ Day 2 – User Management Backend Completed
+- ⏳ Day 3 – Task Management Backend(In progress)
 
 ## 📄 License
 
