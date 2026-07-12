@@ -6,7 +6,7 @@ const route = Router();
 
 route.post("/signup", signUp);
 route.post("/login", login);
-route.get("/me", auth, profile);
+route.get("/profile", auth, profile);
 
 
 export default route;

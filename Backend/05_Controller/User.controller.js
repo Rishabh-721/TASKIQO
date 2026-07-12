@@ -244,9 +244,17 @@
 
     const userList = async(req, res) => {
         try {
+            const user = req.user;
+
             const { role, isActive, isDeleted } = req.query;
 
             const filter = {};
+
+            if(!user){
+                return res.status(400).json({
+                    message: "Wrong User info Kindly Login"
+                })
+            }
 
             if(role){
                 filter.role = role;
@@ -260,11 +268,33 @@
                 filter.isDeleted = isDeleted === "true";
             }
 
-            const users = await User.find(filter);
+            let Users;
+            
+            if(user.role === "Super_Admin"){
+                 Users = await User.find(filter);
+            }else if(user.role === "Admin"){
+                Users = await User.find({role: "Employee", ...filter})
+            }else{
+                return res.status(403).json({
+                    message: "Not authorize to see other Users"
+                })
+            }
+            let msg;
+            if((Users.length === 0)){
+                if(Object.keys(filter).length > 0){
+                    const mesg = Object.entries(filter).map(([key, value]) => `${Key} is ${value}`).join(", ");
+                    msg = `No User Found when ${mesg}`
+                }else{
+                    msg = "No User Found"
+                }
+            }else{
+                msg = "User Found Sucessfully"
+            }
+            
 
             res.status(200).json({
-                message : `PFA User info as per filter`,
-                data: users,
+                message : msg,
+                data: Users,
             })
 
         } catch (error) {

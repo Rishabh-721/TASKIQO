@@ -21,3 +21,23 @@
 # Break for 1: 43 to 2:01
     Postman testing, Done at 02:18
 }
+
+# Day 3 : 12th July 2026 at 11:57  Tasks:- {
+    Task Schema creation, Done at 12:10
+    Create & Update Task APIs, Done at 13:03
+    Delete Task API, Done at 13:23
+    Assign employees, Priority, & Due dates, Done at 14:03
+    Task Reassign & TaskList API, Done at 15:40
+    Task routes, Done at 15:47
+    Corrected User Read, Done at 16: 53
+    Postman testing, Done at 16:53
+}
+
+# Day 4 : 12th July 2026 at Tasks:- {
+    Task status flow (Pending -> In Progress)
+    Employee task APIs & Admin task views
+    Dashboard statistics calculations
+    Search & filtering endpoints
+    Workflow routes
+    Postman testing
+}
