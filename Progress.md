@@ -66,3 +66,22 @@ Break: (12:43 - 13:40)
 ✅  Postman testing (16:47)
 
 # Step 5
+Date: 14th July 2026
+Started: 09:12
+
+✅ Backend To Frontend Cors Setup (09:30)
+✅ Frontend Installation Setup & React-Router + axios install (09:57)
+
+Break: (09:57 - 11:23)
+
+✅ Created API and Btn component (12:50)
+✅ Created Auth Page with outlet (13:50)
+✅ Login Created Sucessfully With Good UX (16:13)
+
+Break: (16:13 - 18:06)
+
+✅ Signup with Good UX (17:03)
+✅ Error Debugging (17:03 - 21:04)
+# issue - while checking Every thing on login and signup page found issue API was not returning any value and no get.item was set.item was working.
+
+# resolve - this issue was happening due to vite server not restarting after changes thinking of changin it to old react so can use nodemon.

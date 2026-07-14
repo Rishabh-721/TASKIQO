@@ -53,8 +53,9 @@ Taskiqo is a MERN stack role-based task management system that enables organizat
 - Mongoose
 - JWT
 - bcrypt
+- cors
 
-### Frontend (Upcoming)
+### Frontend 
 - React
 - React Router
 - Axios
@@ -63,7 +64,6 @@ Taskiqo is a MERN stack role-based task management system that enables organizat
 
 ## 📂 Project Structure
 
-```
 Backend/
 ├── 01_Database/
 ├── 02_Model/
@@ -73,7 +73,14 @@ Backend/
 ├── 06_Routes/
 ├── Server.js
 └── package.json
-```
+
+Frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.jsx
+│   └── main.jsx
+└── package.json
 
 ---
 
@@ -110,7 +117,11 @@ Backend/
 - ✅ Task Management Module Completed
 - ✅ Task Workflow Completed
 - ✅ Dashboard APIs Completed
-- ⏳ React Frontend
+- ✅ Frontend Project Setup
+- ✅ Authentication UI
+- ✅ API Integration
+- ⏳ Protected Routes
+- ⏳ Role Based Dashboards
 - ⏳ Deployment
 ---
 
@@ -121,7 +132,12 @@ Backend/
 - [x] Task CRUD
 - [x] Task Workflow
 - [x] Dashboard APIs
-- [ ] React Frontend
+- [x] Frontend Setup
+- [x] Authentication UI
+- [x] API Integration
+- [ ] Protected Routes
+- [ ] Team Management
+- [ ] Role Based Dashboards
 - [ ] Deployment
 
 ---
@@ -173,6 +189,12 @@ MongoDB
 ✔ Workflow
 ✔ Employee Task APIs
 ✔ Dashboard APIs
+
+### Day 5 (14 July 2026)
+✔ Frontend Setup & Routing
+✔ Authentication UI (Login & Signup)
+✔ Backend API Integration
+✔ Reusable Components & UX Improvements
 
 
 ## 📄 License
