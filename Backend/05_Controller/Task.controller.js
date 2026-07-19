@@ -492,10 +492,10 @@ const dashboard = async(req, res) => {
         const id = req.user.id;
         const role = req.user.role;
 
-        let dashboard = {};
+        let dashboardData = {};
 
         if(role === "Super_Admin"){
-            dashboard = {
+            dashboardData = {
             totalUsers : await User.countDocuments({isDeleted : false}),
             activeUsers : await User.countDocuments({isDeleted : false, isActive: true}),
             inactiveUsers : await User.countDocuments({isDeleted : false, isActive: false}),
@@ -512,7 +512,7 @@ const dashboard = async(req, res) => {
             completedTasks : await Task.countDocuments({status: "Compleated"}),
             }
         }else if(role === "Admin"){
-            dashboard = {
+            dashboardData = {
                 totalTasks : await Task.countDocuments({createdBy: id}),
                 pendingTasks : await Task.countDocuments({createdBy: id, status: "Pending"}),
                 inProgressTasks : await Task.countDocuments({createdBy: id,status: "In-Progress"}),
@@ -520,7 +520,7 @@ const dashboard = async(req, res) => {
                 completedTasks : await Task.countDocuments({createdBy: id,status: "Compleated"}),
             }
         }else if (role === "Employee") {
-            dashboard = {
+            dashboardData = {
                 totalTasks : await Task.countDocuments({"assignedTo.user": id}),
                 pendingTasks : await Task.countDocuments({"assignedTo.user": id, status: "Pending"}),
                 inProgressTasks : await Task.countDocuments({"assignedTo.user": id,status: "In-Progress"}),

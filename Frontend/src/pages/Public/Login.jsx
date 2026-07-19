@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Btn from '../../components/Btn';
 import API from '../../components/API';
-import {AuthContext} from "../../utils/AuthContext";
-import { useContext } from 'react';
+import { AuthContext } from '../../utils/AuthContext';
 
 
 const Login = () => {
-    const {checkAuth} = useContext(AuthContext);
     const navigate = useNavigate();
-    const [isLoading, setisLoading] = useState(false);
+    const {checkAuth} = useContext(AuthContext);
+    const [isLoading, setIsLoading] = useState(false);
     const [form, setForm] = useState({
       email: "",
       password: ""
@@ -18,13 +17,13 @@ const Login = () => {
     email: "",
     password: ""
   });
-    const [apiSucess, setApiSucess] = useState(false);
+    const [apiSuccess, setapiSuccess] = useState(false);
     const [apiError, setApiError] = useState("");
 
     const handleChange = (e) => {
       setForm({...form,[e.target.name]: e.target.value});
       setError({...error,[e.target.name]: ""});
-      setApiSucess(false);
+      setapiSuccess(false);
       setApiError("");
     };
     
@@ -36,16 +35,16 @@ const Login = () => {
         password: ""
       });
 
-      if(!form.email || form.email.length === 0){
+      if(!form.email){
         checker.email = "Email is required";
       }
 
-      if(!form.password || form.password.length === 0){
+      if(!form.password){
         checker.password = "Password is required";
       }
 
       if(form.password && form.password.length < 8){
-        checker.password = "Password should be atleast 8 letter";
+        checker.password = "Password should be atleast 8 character";
       }
 
       if(checker.email !== "" || checker.password !== ""){
@@ -55,18 +54,16 @@ const Login = () => {
 
 
       try {
-        setisLoading(true);
+        setIsLoading(true);
         const response = await API("POST", "auth/login", form);
-        setApiSucess(true);
+        setapiSuccess(true);
         localStorage.setItem("token", response?.data?.token);
         const success = await checkAuth();
-        if(success){
-          navigate("/dashboard");
-        }
+        success ? navigate("/home") : navigate("/");
       } catch (error) {
         setApiError(error.response?.data?.message);
       }finally{
-        setisLoading(false);
+        setIsLoading(false);
       }
 
     };
@@ -96,7 +93,7 @@ const Login = () => {
     </div>
 
     {apiError && <p className='apiError'>{apiError}</p> }
-    {apiSucess && <p className='apiSucess'>Login Successfully</p> }
+    {apiSuccess && <p className='apiSuccess'>Login Successfully</p> }
 
     <div>New to Taskiqo? <br />
     <span className='link-text' onClick={() => navigate("/signup")}>Sign Up</span></div>

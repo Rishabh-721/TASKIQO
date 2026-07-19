@@ -1,7 +1,7 @@
 import { Router } from "express";
 import auth from "../03_Middleware/Auth.Middleware.js";
 import role from "../03_Middleware/Role.Middleware.js"
-import { taskCreation, taskDelete, taskReassingAdmin, taskUpdate, taskListSuperAdmin, taskListEmployee, review, assignedIsCompleated, dashboard, dashboard } from "../05_Controller/Task.controller.js";
+import { taskCreation, taskDelete, taskReassingAdmin, taskUpdate, taskListSuperAdmin, taskListEmployee, review, assignedIsCompleated, dashboard } from "../05_Controller/Task.controller.js";
 
 const route = Router();
 
